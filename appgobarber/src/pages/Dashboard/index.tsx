@@ -4,7 +4,6 @@ import Icon from 'react-native-vector-icons/Feather';
 import api from '../../services/api';
 
 import { useAuth } from '../../hooks/auth';
-import Profile from '../Profile';
 
 import {
   Container,

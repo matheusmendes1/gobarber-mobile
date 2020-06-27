@@ -4,7 +4,6 @@ import Icon from 'react-native-vector-icons/Feather';
 import api from '../../services/api';
 
 import { useAuth } from '../../hooks/auth';
-import Profile from '../Profile';
 
 import {
   Container,
@@ -30,7 +29,7 @@ export interface Provider {
 }
 
 const Dashboard: React.FC = () => {
-  const { signOut, user } = useAuth();
+  const { user } = useAuth();
   const { navigate } = useNavigation();
   const [providers, setProviders] = useState<Provider[]>([]);
 
@@ -41,9 +40,8 @@ const Dashboard: React.FC = () => {
   }, []);
 
   const navigateToProfile = useCallback(() => {
-    // navigate('Profile');
-    signOut();
-  }, [signOut]);
+    navigate('Profile');
+  }, [navigate]);
 
   const navigateToCreateAppointment = useCallback(
     (providerId: string) => {
